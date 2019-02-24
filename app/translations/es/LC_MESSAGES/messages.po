@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-02-22 10:17-0300\n"
+"POT-Creation-Date: 2019-02-23 12:44-0300\n"
 "PO-Revision-Date: 2019-02-22 10:19-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Generated-By: Babel 2.6.0\n"
 
 #: app/__init__.py:22
-msgid "Please log in to access this page."
-msgstr "Por favor ingrese para acceder a esta página."
+msgid "Please log in to access this page"
+msgstr ""
 
-#: app/email.py:21
+#: app/email.py:22
 msgid "[Microblog] Reset Your Password"
 msgstr "[Microblog] Nueva Contraseña"
 
@@ -46,100 +46,97 @@ msgstr "Ingresar"
 msgid "Email"
 msgstr "Email"
 
-#: app/forms.py:23 app/forms.py:45
+#: app/forms.py:22 app/forms.py:66
 msgid "Repeat Password"
 msgstr "Repetir Contraseña"
 
-#: app/forms.py:24 app/templates/register.html:5
+#: app/forms.py:23 app/templates/register.html:5
 msgid "Register"
 msgstr "Registrarse"
 
-#: app/forms.py:29 app/forms.py:62
+#: app/forms.py:28
 msgid "Please use a different username."
 msgstr "Por favor use un nombre de usuario diferente."
 
-#: app/forms.py:34
+#: app/forms.py:33
 msgid "Please use a different email address."
 msgstr "Por favor use una dirección de email diferente."
 
-#: app/forms.py:39 app/forms.py:46
-msgid "Request Password Reset"
-msgstr "Pedir una nueva contraseña"
-
-#: app/forms.py:51
+#: app/forms.py:38
 msgid "About me"
 msgstr "Acerca de mí"
 
-#: app/forms.py:52 app/forms.py:67
+#: app/forms.py:39 app/forms.py:55
 msgid "Submit"
 msgstr "Enviar"
 
-#: app/forms.py:66
+#: app/forms.py:49
+msgid "Please use a different username"
+msgstr ""
+
+#: app/forms.py:53
 msgid "Say something"
 msgstr "Dí algo"
 
-#: app/forms.py:71
-msgid "Search"
-msgstr "Buscar"
+#: app/forms.py:60 app/forms.py:67
+msgid "Request Password Reset"
+msgstr "Pedir una nueva contraseña"
 
-#: app/routes.py:30
+#: app/routes.py:35
 msgid "Your post is now live!"
 msgstr "¡Tu artículo ha sido publicado!"
 
-#: app/routes.py:66
+#: app/routes.py:57
 msgid "Invalid username or password"
 msgstr "Nombre de usuario o contraseña inválidos"
 
-#: app/routes.py:92
-msgid "Congratulations, you are now a registered user!"
-msgstr "¡Felicitaciones, ya eres un usuario registrado!"
+#: app/routes.py:83
+msgid "Congratulations, you ate now a registered user!"
+msgstr ""
 
-#: app/routes.py:107
+#: app/routes.py:112
+msgid "Your changes have benn saved"
+msgstr ""
+
+#: app/routes.py:126 app/routes.py:142
+msgid "User {} not found"
+msgstr ""
+
+#: app/routes.py:129
+msgid "You cannot follow yourself"
+msgstr ""
+
+#: app/routes.py:133
+msgid "You are following {}!"
+msgstr ""
+
+#: app/routes.py:145
+msgid "You cannot unfollow yourself"
+msgstr ""
+
+#: app/routes.py:149
+msgid "You are unfollowing {}!"
+msgstr ""
+
+#: app/routes.py:177
 msgid "Check your email for the instructions to reset your password"
 msgstr "Busca en tu email las instrucciones para crear una nueva contraseña"
 
-#: app/routes.py:124
+#: app/routes.py:194
 msgid "Your password has been reset."
 msgstr "Tu contraseña ha sido cambiada."
 
-#: app/routes.py:152
-msgid "Your changes have been saved."
-msgstr "Tus cambios han sido salvados."
+#: app/translate.py:9
+msgid "Error: the translation service is not configured"
+msgstr ""
 
-#: app/routes.py:157 app/templates/edit_profile.html:5
-msgid "Edit Profile"
-msgstr "Editar Perfil"
-
-#: app/routes.py:166 app/routes.py:182
-#, python-format
-msgid "User %(username)s not found."
-msgstr "El usuario %(username)s no ha sido encontrado."
-
-#: app/routes.py:169
-msgid "You cannot follow yourself!"
-msgstr "¡No te puedes seguir a tí mismo!"
-
-#: app/routes.py:173
-#, python-format
-msgid "You are following %(username)s!"
-msgstr "¡Ahora estás siguiendo a %(username)s!"
-
-#: app/routes.py:185
-msgid "You cannot unfollow yourself!"
-msgstr "¡No te puedes dejar de seguir a tí mismo!"
-
-#: app/routes.py:189
-#, python-format
-msgid "You are not following %(username)s."
-msgstr "No estás siguiendo a %(username)s."
+#: app/translate.py:16
+msgid "Error: the translation service failed"
+msgstr ""
 
 #: app/templates/404.html:4
-msgid "Not Found"
-msgstr "Página No Encontrada"
-
-#: app/templates/404.html:5 app/templates/500.html:6
-msgid "Back"
-msgstr "Atrás"
+msgid "File Not Found"
+msgstr ""
 
 #: app/templates/500.html:4
 msgid "An unexpected error has occurred"
@@ -149,14 +146,22 @@ msgstr "Ha ocurrido un error inesperado"
 msgid "The administrator has been notified. Sorry for the inconvenience!"
 msgstr "El administrador ha sido notificado. ¡Lamentamos la inconveniencia!"
 
-#: app/templates/_post.html:9
+#: app/templates/_post.html:14
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s dijo %(when)s"
 
+#: app/templates/_post.html:24
+msgid "Translate"
+msgstr ""
+
 #: app/templates/base.html:4
 msgid "Welcome to Microblog"
 msgstr "Bienvenido a Microblog"
+
+#: app/templates/base.html:12
+msgid "Toggle navigation"
+msgstr ""
 
 #: app/templates/base.html:21
 msgid "Home"
@@ -166,72 +171,65 @@ msgstr "Inicio"
 msgid "Explore"
 msgstr "Explorar"
 
-#: app/templates/base.html:33
+#: app/templates/base.html:26
 msgid "Login"
 msgstr "Ingresar"
 
-#: app/templates/base.html:35
+#: app/templates/base.html:28
 msgid "Profile"
 msgstr "Perfil"
 
-#: app/templates/base.html:36
+#: app/templates/base.html:29
 msgid "Logout"
 msgstr "Salir"
+
+#: app/templates/base.html:65
+msgid "Error: Could not contact server."
+msgstr ""
+
+#: app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr "Editar Perfil"
 
 #: app/templates/index.html:5
 #, python-format
 msgid "Hi, %(username)s!"
 msgstr "¡Hola, %(username)s!"
 
-#: app/templates/index.html:17 app/templates/user.html:31
+#: app/templates/index.html:17 app/templates/user.html:29
 msgid "Newer posts"
 msgstr "Artículos siguientes"
 
-#: app/templates/index.html:22 app/templates/user.html:36
-msgid "Older posts"
-msgstr "Artículos previos"
+#: app/templates/index.html:22 app/templates/user.html:34
+msgid "Older posts "
+msgstr ""
 
-#: app/templates/login.html:12
-msgid "New User?"
-msgstr "¿Usuario Nuevo?"
-
-#: app/templates/login.html:12
-msgid "Click to Register!"
-msgstr "¡Haz click aquí para registrarte!"
-
-#: app/templates/login.html:14
+#: app/templates/login.html:25
 msgid "Forgot Your Password?"
 msgstr "¿Te olvidaste tu contraseña?"
 
-#: app/templates/login.html:15
+#: app/templates/login.html:26
 msgid "Click to Reset It"
 msgstr "Haz click aquí para pedir una nueva"
 
+#: app/templates/login.html:29
+msgid "New User? "
+msgstr ""
+
+#: app/templates/login.html:29
+msgid "Click to Register"
+msgstr ""
+
 #: app/templates/reset_password.html:5
+#: app/templates/reset_password_request.html:5
 msgid "Reset Your Password"
 msgstr "Nueva Contraseña"
-
-#: app/templates/reset_password_request.html:5
-msgid "Reset Password"
-msgstr "Nueva Contraseña"
-
-#: app/templates/search.html:4
-msgid "Search Results"
-msgstr "Resultados de Búsqueda"
-
-#: app/templates/search.html:12
-msgid "Previous results"
-msgstr "Resultados previos"
-
-#: app/templates/search.html:17
-msgid "Next results"
-msgstr "Resultados próximos"
 
 #: app/templates/user.html:8
 msgid "User"
 msgstr "Usuario"
 
-#: app/templates/user.html:11
+#: app/templates/user.html:10
 msgid "Last seen on"
 msgstr "Última visita"
 
@@ -246,13 +244,67 @@ msgid "%(count)d following"
 msgstr "siguiendo a %(count)d"
 
 #: app/templates/user.html:15
-msgid "Edit your profile"
-msgstr "Editar tu perfil"
-
-#: app/templates/user.html:17
 msgid "Follow"
 msgstr "Seguir"
 
-#: app/templates/user.html:19
+#: app/templates/user.html:17
 msgid "Unfollow"
 msgstr "Dejar de seguir"
+
+#~ msgid "Please log in to access this page."
+#~ msgstr "Por favor ingrese para acceder a esta página."
+
+#~ msgid "Search"
+#~ msgstr "Buscar"
+
+#~ msgid "Congratulations, you are now a registered user!"
+#~ msgstr "¡Felicitaciones, ya eres un usuario registrado!"
+
+#~ msgid "Your changes have been saved."
+#~ msgstr "Tus cambios han sido salvados."
+
+#~ msgid "User %(username)s not found."
+#~ msgstr "El usuario %(username)s no ha sido encontrado."
+
+#~ msgid "You cannot follow yourself!"
+#~ msgstr "¡No te puedes seguir a tí mismo!"
+
+#~ msgid "You are following %(username)s!"
+#~ msgstr "¡Ahora estás siguiendo a %(username)s!"
+
+#~ msgid "You cannot unfollow yourself!"
+#~ msgstr "¡No te puedes dejar de seguir a tí mismo!"
+
+#~ msgid "You are not following %(username)s."
+#~ msgstr "No estás siguiendo a %(username)s."
+
+#~ msgid "Not Found"
+#~ msgstr "Página No Encontrada"
+
+#~ msgid "Back"
+#~ msgstr "Atrás"
+
+#~ msgid "Older posts"
+#~ msgstr "Artículos previos"
+
+#~ msgid "New User?"
+#~ msgstr "¿Usuario Nuevo?"
+
+#~ msgid "Click to Register!"
+#~ msgstr "¡Haz click aquí para registrarte!"
+
+#~ msgid "Reset Password"
+#~ msgstr "Nueva Contraseña"
+
+#~ msgid "Search Results"
+#~ msgstr "Resultados de Búsqueda"
+
+#~ msgid "Previous results"
+#~ msgstr "Resultados previos"
+
+#~ msgid "Next results"
+#~ msgstr "Resultados próximos"
+
+#~ msgid "Edit your profile"
+#~ msgstr "Editar tu perfil"
+
