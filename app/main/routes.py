@@ -6,7 +6,7 @@ from guess_language import guess_language
 from datetime import datetime
 from app import db
 from app.main import blueprint
-from app.main.forms import PostForm, EditProfileForm
+from app.main.forms import PostForm, EditProfileForm, SearchForm
 from app.models import User, Post
 from app.translate import translate
 
@@ -16,6 +16,7 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
+        g.search_form = SearchForm()
     g.locale = str(get_locale())
 
 
@@ -53,9 +54,11 @@ def user(username):
     page = request.args.get('page', 1, type=int)
     posts = user.posts.order_by(Post.timestamp.desc()).paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.user', username=user.username, page=posts.next_num) \
+    next_url = url_for(
+        'main.user', username=user.username, page=posts.next_num) \
         if posts.has_next else None
-    prev_url = url_for('main.user', username=user.username, page=posts.prev_num) \
+    prev_url = url_for(
+        'main.user', username=user.username, page=posts.prev_num) \
         if posts.has_prev else None
     return render_template(
         'user.html', user=user, posts=posts.items,
@@ -133,3 +136,20 @@ def translate_text():
         request.form['text'],
         request.form['source_language'],
         request.form['dest_language'])})
+
+
+@blueprint.route('/search')
+@login_required
+def search():
+    if not g.search_form.validate():
+        return redirect(url_for('main.explore'))
+    page = request.args.get('page', 1, type=int)
+    posts, total = Post.search(
+        g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
+    next_url = url_for('main.search', q=g.search_form.q.data, page=page+1) \
+        if total > page * current_app.config['POSTS_PER_PAGE'] else None
+    prev_url = url_for('main.search', q=g.search_form.q.data, page=page-1) \
+        if page > 1 else None
+    return render_template(
+        'search.html', title=_('Search'), posts=posts,
+        next_url=next_url, prev_url=prev_url)
